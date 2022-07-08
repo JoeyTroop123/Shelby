@@ -13,9 +13,9 @@
 
 #define _DF  0 //  0 DEFAULT
 #define _GM  1 //  1 GAMING
-#define _LW  2 //  8 LOWER
-#define _RE  3 //  9 RAISE
-#define _AJ  4 // 11 ADJUST
+#define _LW  2 //  2 LOWER
+#define _RE  3 //  3 RAISE
+#define _AJ  4 //  4 ADJUST
 
 &lt { quick-tap-ms = <180>; };
 &mt { tapping-term-ms = <180>; };
