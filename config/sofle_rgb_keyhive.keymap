@@ -13,25 +13,9 @@
 
 #define _DF  0 //  0 DEFAULT
 #define _GM  1 //  1 GAMING
-#define _GA  2 //  2 GAMMA
-#define _DE  3 //  3 DELTA
-#define _EP  4 //  4 EPSILON
-#define _ZE  5 //  5 ZETA
-#define _SD  6 //  6 SPACEDOWN
-#define _SU  7 //  7 SPACEUP
-#define _LW  8 //  8 LOWER
-#define _RE  9 //  9 RAISE
-#define _RS 10 // 10 REALSPACE
-#define _AJ 11 // 11 ADJUST
-#define _SS 12 // 12 SUBSPACE
-#define _HS 13 // 13 HYPERSPACE
-#define _SL 14 // 14 SLIPSPACE
-#define _FS 15 // 15 FOLDSPACE
-#define _KS 16 // 16 KNOWNSPACE
-#define _CS 17 // 17 CYBERSPACE
-#define _BH 18 // 18 BLACKHOLE
-#define _WH 19 // 19 WORMHOLE
-#define _WP 20 // 20 WARP
+#define _LW  2 //  8 LOWER
+#define _RE  3 //  9 RAISE
+#define _AJ  4 // 11 ADJUST
 
 &lt { quick-tap-ms = <180>; };
 &mt { tapping-term-ms = <180>; };
@@ -39,49 +23,9 @@
 / {
   conditional_layers {
     compatible = "zmk,conditional-layers";
-    realspace_layer {
-      if-layers = <_SU _SD>;
-      then-layer = <_RS>;
-    };
     adjust_layer {
       if-layers = <_LW _RE>;
       then-layer = <_AJ>;
-    };
-    subspace_layer {
-      if-layers = <_SD _LW>;
-      then-layer = <_SS>;
-    };
-    hyperspace_layer {
-      if-layers = <_SU _RE>;
-      then-layer = <_HS>;
-    };
-    slipspace_layer {
-      if-layers = <_SD _RE>;
-      then-layer = <_SL>;
-    };
-    foldspace_layer {
-      if-layers = <_SU _LW>;
-      then-layer = <_FS>;
-    };
-    knownspace_layer {
-      if-layers = <_LW _RS>;
-      then-layer = <_KS>;
-    };
-    cyberspace_layer {
-      if-layers = <_RE _RS>;
-      then-layer = <_CS>;
-    };
-    blackhole_layer {
-      if-layers = <_SD _AJ>;
-      then-layer = <_BH>;
-    };
-    wormhole_layer {
-      if-layers = <_SU _AJ>;
-      then-layer = <_WH>;
-    };
-    warp_layer {
-      if-layers = <_RS _AJ>;
-      then-layer = <_WP>;
     };
   };
   keymap {
@@ -114,90 +58,6 @@
 //        &inc_dec_kp PG_UP PG_DN
         >;
     };
-    gamma_layer {
-      label = "gamma";
-      bindings = <
-        &kp GRAVE       &kp N1            &kp N2            &kp N3            &kp N4          &kp N5                                 &kp N6        &kp N7    &kp N8          &kp N9    &kp N0   &kp BSPC
-        &kp TAB         &kp Q             &kp W             &kp E             &kp R           &kp T                                  &kp Y         &kp U     &kp I           &kp O     &kp P    &kp BSLH
-        &mt LCTRL ESC   &kp A             &kp S             &kp D             &kp F           &kp G                                  &kp H         &kp J     &kp K           &kp L     &kp SEMI &kp SQT
-        &kp LSHFT       &kp Z             &kp X             &kp C             &kp V           &kp B         &kp C_MUTE   &kp C_PP    &kp N         &kp M     &kp COMMA       &kp DOT   &kp FSLH &kp RSHFT
-                                          &kp LGUI          &kp LALT          &kp LCTRL       &lt _SD SPACE &lt _LW BSPC &lt _RE RET &lt _SU SPACE &kp RCTRL &kp RALT        &kp RGUI
-        >;
-      sensor-bindings = <
-        &inc_dec_kp C_VOL_UP C_VOL_DN
-        // &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    delta_layer {
-      label = "delta";
-      bindings = <
-        &kp GRAVE       &kp N1            &kp N2            &kp N3            &kp N4          &kp N5                                 &kp N6        &kp N7    &kp N8          &kp N9    &kp N0   &kp BSPC
-        &kp TAB         &kp Q             &kp W             &kp E             &kp R           &kp T                                  &kp Y         &kp U     &kp I           &kp O     &kp P    &kp BSLH
-        &mt LCTRL ESC   &kp A             &kp S             &kp D             &kp F           &kp G                                  &kp H         &kp J     &kp K           &kp L     &kp SEMI &kp SQT
-        &kp LSHFT       &kp Z             &kp X             &kp C             &kp V           &kp B         &kp C_MUTE   &kp C_PP    &kp N         &kp M     &kp COMMA       &kp DOT   &kp FSLH &kp RSHFT
-                                          &kp LGUI          &kp LALT          &kp LCTRL       &lt _SD SPACE &lt _LW BSPC &lt _RE RET &lt _SU SPACE &kp RCTRL &kp RALT        &kp RGUI
-        >;
-      sensor-bindings = <
-        &inc_dec_kp C_VOL_UP C_VOL_DN
-        // &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    epsilon_layer {
-      label = "epsilon";
-      bindings = <
-        &kp GRAVE       &kp N1            &kp N2            &kp N3            &kp N4          &kp N5                                 &kp N6        &kp N7    &kp N8          &kp N9    &kp N0   &kp BSPC
-        &kp TAB         &kp Q             &kp W             &kp E             &kp R           &kp T                                  &kp Y         &kp U     &kp I           &kp O     &kp P    &kp BSLH
-        &mt LCTRL ESC   &kp A             &kp S             &kp D             &kp F           &kp G                                  &kp H         &kp J     &kp K           &kp L     &kp SEMI &kp SQT
-        &kp LSHFT       &kp Z             &kp X             &kp C             &kp V           &kp B         &kp C_MUTE   &kp C_PP    &kp N         &kp M     &kp COMMA       &kp DOT   &kp FSLH &kp RSHFT
-                                          &kp LGUI          &kp LALT          &kp LCTRL       &lt _SD SPACE &lt _LW BSPC &lt _RE RET &lt _SU SPACE &kp RCTRL &kp RALT        &kp RGUI
-        >;
-      sensor-bindings = <
-        &inc_dec_kp C_VOL_UP C_VOL_DN
-        // &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    zeta_layer {
-      label = "zeta";
-      bindings = <
-        &kp GRAVE       &kp N1            &kp N2            &kp N3            &kp N4          &kp N5                                 &kp N6        &kp N7    &kp N8          &kp N9    &kp N0   &kp BSPC
-        &kp TAB         &kp Q             &kp W             &kp E             &kp R           &kp T                                  &kp Y         &kp U     &kp I           &kp O     &kp P    &kp BSLH
-        &mt LCTRL ESC   &kp A             &kp S             &kp D             &kp F           &kp G                                  &kp H         &kp J     &kp K           &kp L     &kp SEMI &kp SQT
-        &kp LSHFT       &kp Z             &kp X             &kp C             &kp V           &kp B         &kp C_MUTE   &kp C_PP    &kp N         &kp M     &kp COMMA       &kp DOT   &kp FSLH &kp RSHFT
-                                          &kp LGUI          &kp LALT          &kp LCTRL       &lt _SD SPACE &lt _LW BSPC &lt _RE RET &lt _SU SPACE &kp RCTRL &kp RALT        &kp RGUI
-        >;
-      sensor-bindings = <
-        &inc_dec_kp C_VOL_UP C_VOL_DN
-        // &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    spacedown_layer {
-      label = "spacedown";
-      bindings = <
-        &rgb_ug RGB_TOG &ext_power EP_TOG &ext_power EP_OFF &out OUT_USB      &out OUT_BLE    &out OUT_TOG                           &trans        &trans    &trans          &trans    &trans   &kp BSPC
-        &rgb_ug RGB_TOG &ext_power EP_TOG &ext_power EP_OFF &out OUT_USB      &out OUT_BLE    &out OUT_TOG                           &trans        &trans    &trans          &trans    &trans   &kp BSPC
-        &rgb_ug RGB_EFF &rgb_ug RGB_HUI   &rgb_ug RGB_SAI   &rgb_ug RGB_BRI   &rgb_ug RGB_SPI &trans                                 &kp LEFT      &kp DOWN  &kp UP          &kp RIGHT &trans   &trans
-        &rgb_ug RGB_EFR &rgb_ug RGB_HUD   &rgb_ug RGB_SAD   &rgb_ug RGB_BRD   &rgb_ug RGB_SPD &trans        &trans       &trans      &kp HOME      &kp PG_DN &kp PG_UP       &kp END   &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    spaceup_layer {
-      label = "spaceup";
-      bindings = <
-        &rgb_ug RGB_TOG &kp N1            &kp N2            &kp N3            &kp N4          &kp N5                                 &kp N6        &kp N7    &kp N8          &kp N9    &kp N0   &kp DEL
-        &rgb_ug RGB_TOG &kp N1            &kp N2            &kp N3            &kp N4          &kp N5                                 &kp N6        &kp N7    &kp N8          &kp N9    &kp N0   &kp DEL
-        &rgb_ug RGB_EFF &rgb_ug RGB_HUI   &rgb_ug RGB_SAI   &rgb_ug RGB_BRI   &rgb_ug RGB_SPI &trans                                 &kp LEFT      &kp DOWN  &kp UP          &kp RIGHT &trans   &rgb_ug RGB_TOG
-        &rgb_ug RGB_EFR &rgb_ug RGB_HUD   &rgb_ug RGB_SAD   &rgb_ug RGB_BRD   &rgb_ug RGB_SPD &trans        &trans       &trans      &kp HOME      &kp PG_DN &kp PG_UP       &kp END   &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
     lower_layer {
       label = "lower";
       bindings = <
@@ -226,150 +86,10 @@
         &inc_dec_kp PG_UP PG_DN
         >;
     };
-    realspace_layer { // SPACEDOWN + SPACEUP = REALSPACE
-      label = "realspace";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp N5
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &reset          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &reset
-        &bootloader     &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &bootloader
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
     adjust_layer { // LOWER + RAISE = ADJUST
       label = "adjust";
       bindings = <
         &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp N6
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    subspace_layer { // SPACEDOWN + LOWER = SUBSPACE
-      label = "subspace";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp N7
-        &rgb_ug RGB_TOG &trans            &trans            &out OUT_USB      &out OUT_BLE    &out OUT_TOG                           &trans        &trans    &trans          &trans    &trans   &trans
-        &bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4                           &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    hyperspace_layer { // SPACEUP + RAISE = HYPERSPACE
-      label = "hyperspace";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp N8
-        &rgb_ug RGB_TOG &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &rgb_ug RGB_EFF &rgb_ug RGB_HUI   &rgb_ug RGB_SAI   &rgb_ug RGB_BRI   &rgb_ug RGB_SPI &trans                                 &kp LEFT      &kp DOWN  &kp UP          &kp RIGHT &trans   &trans
-        &rgb_ug RGB_EFR &rgb_ug RGB_HUD   &rgb_ug RGB_SAD   &rgb_ug RGB_BRD   &rgb_ug RGB_SPD &trans        &trans       &trans      &kp HOME      &kp PG_DN &kp PG_UP       &kp END   &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    slipspace_layer { // SPACEDOWN + RAISE = SLIPSPACE
-      label = "slipspace";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp N9
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    foldspace_layer { // SPACEUP + LOWER = FOLDSPACE
-      label = "foldspace";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp A
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    knownspace_layer { // LOWER + REALSPACE = KNOWNSPACE
-      label = "knownspace";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp B
-        &trans          &ext_power EP_TOG &ext_power EP_OFF &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    cyberspace_layer { // RAISE + REALSPACE = CYBERSPACE
-      label = "cyberspace";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp C
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    blackhole_layer { // SPACEDOWN + ADJUST = BLACKHOLE
-      label = "blackhole";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp D
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    wormhole_layer { // SPACEUP + ADJUST = WORMHOLE
-      label = "wormhole";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp E
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
-        &trans          &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &trans
-                                          &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans
-        >;
-      sensor-bindings = <
-        // &inc_dec_kp C_VOL_UP C_VOL_DN
-        &inc_dec_kp PG_UP PG_DN
-        >;
-    };
-    warp_layer { // REALSPACE + ADJUST = WARP
-      label = "warp";
-      bindings = <
-        &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &kp F
         &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
         &trans          &trans            &trans            &trans            &trans          &trans                                 &trans        &trans    &trans          &trans    &trans   &trans
         &trans          &trans            &trans            &trans            &trans          &trans        &trans       &trans      &trans        &trans    &trans          &trans    &trans   &trans
