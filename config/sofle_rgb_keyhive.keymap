@@ -33,11 +33,11 @@
     default_layer {
       label = "default";
       bindings = <
-        &kp ESC       &kp N1            &kp N2            &kp N3            &kp N4          &kp N5                                 &kp N6        &kp N7    &kp N8          &kp N9    &kp N0   &kp SLASH
-        &kp TAB         &kp Q             &kp W             &kp E             &kp R           &kp T                                  &kp Y         &kp U     &kp I           &kp O     &kp P    &kp MINUS
+        &kp ESC         &kp N1            &kp N2            &kp N3            &kp N4          &kp N5                                 &kp N6        &kp N7    &kp N8          &kp N9    &kp N0        &kp SLASH
+        &kp TAB         &kp Q             &kp W             &kp E             &kp R           &kp T                                  &kp Y         &kp U     &kp I           &kp O     &kp P         &kp MINUS
         &kp BSPC        &kp A             &kp S             &kp D             &kp F           &kp G                                  &kp H         &kp J     &kp K           &kp L     &kp SEMICOLON &kp SQT
-        &kp LSHFT       &kp Z             &kp X             &kp C             &kp V           &kp B         &kp C_MUTE   &kp C_PP    &kp N         &kp M     &kp COMMA       &kp DOT   &kp FSLH &mo
-                                          &kp LALT          &kp LCTRL          &kp PERIOD       &kp SPACE     &lt _LW LGUI &mo _LW  &kp ENTER    &kp COMMA &kp RCTRL        &kp RALT
+        &kp LSHFT       &kp Z             &kp X             &kp C             &kp V           &kp B         &kp C_MUTE   &kp C_PP    &kp N         &kp M     &kp COMMA       &kp DOT   &kp FSLH      &kp RSHFT
+                                          &kp LALT          &kp LCTRL         &kp PERIOD      &kp SPACE     &kp LGUI     &mo _LW     &kp ENTER    &kp COMMA &kp RCTRL        &kp RALT
         >;
       sensor-bindings = <
         &inc_dec_kp C_VOL_UP C_VOL_DN
