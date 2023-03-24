@@ -41,11 +41,11 @@
         default_layer {
             label = "default";
             bindings = <
-  &kp ESC  &kp N1    &kp N2     &kp N3      &kp N4     &kp N5                                    &kp N6     &kp N7     &kp N8    &kp N9         &kp N0  &kp SLASH
-  &kp TAB   &kp Q     &kp W      &kp E       &kp R      &kp T                                     &kp Y      &kp U      &kp I     &kp O          &kp P  &kp MINUS
- &kp BSPC   &kp A     &kp S      &kp D       &kp F      &kp G                                     &kp H      &kp J      &kp K     &kp L  &kp SEMICOLON    &kp SQT
-&kp LSHFT   &kp Z     &kp X      &kp C       &kp V      &kp B  &kp C_MUTE           &kp C_PP      &kp N      &kp M  &kp COMMA   &kp DOT       &kp FSLH  &kp RSHFT
-                   &kp LALT  &kp LCTRL  &kp PERIOD  &kp SPACE    &kp LGUI  &mo 2 //  2 LOWER  &kp ENTER  &kp COMMA  &kp RCTRL  &kp RALT
+  &kp ESC  &kp N1    &kp N2     &kp N3      &kp N4     &kp N5                        &kp N6  &kp N7     &kp N8   &kp N9         &kp N0  &kp SLASH
+  &kp TAB   &kp Q     &kp W      &kp E       &kp R      &kp T                         &kp Y   &kp U      &kp I    &kp O          &kp P  &kp MINUS
+ &kp BSPC   &kp A     &kp S      &kp D       &kp F      &kp G                         &kp H   &kp J      &kp K    &kp L  &kp SEMICOLON    &kp SQT
+&kp LSHFT   &kp Z     &kp X      &kp C       &kp V      &kp B  &kp C_MUTE  &kp C_PP   &kp N   &kp M  &kp COMMA  &kp DOT       &kp FSLH  &kp RSHFT
+                   &kp LALT  &kp LCTRL  &kp PERIOD  &kp SPACE    &kp LGUI     &mo 2
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -54,24 +54,24 @@
         game_layer {
             label = "game";
             bindings = <
-    &kp GRAVE          &kp DEL           &kp N2           &kp N3           &kp N4           &kp N5                                                          &kp N6     &kp N7     &kp N8           &kp N9    &kp N0   &kp BSPC
-      &kp TAB            &kp Q            &kp W  &rgb_ug RGB_EFF           &reset            &kp T                                                           &kp Y     &reset      &kp I  &rgb_ug RGB_TOG     &kp P   &kp BSLH
-&mt LCTRL ESC  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI            &kp D  &rgb_ug RGB_EFF            &kp G                                                 &rgb_ug RGB_HUI      &kp J      &kp K            &kp L    &kp UP    &kp SQT
-    &kp LSHFT  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD            &kp C            &kp V  &rgb_ug RGB_BRI              &kp C_MUTE               &kp C_PP  &rgb_ug RGB_HUD      &kp M  &kp COMMA         &kp LEFT  &kp DOWN  &kp RIGHT
-                                       &kp LGUI         &kp LALT            &kp E  &rgb_ug RGB_BRD  &lt 2 //  2 LOWER BSPC  &lt 3 //  3 RAISE RET        &kp SPACE  &kp RCTRL   &kp RALT         &kp RGUI
+    &kp GRAVE          &kp DEL           &kp N2           &kp N3           &kp N4           &kp N5                                 &kp N6  &kp N7     &kp N8           &kp N9    &kp N0   &kp BSPC
+      &kp TAB            &kp Q            &kp W  &rgb_ug RGB_EFF           &reset            &kp T                                  &kp Y  &reset      &kp I  &rgb_ug RGB_TOG     &kp P   &kp BSLH
+&mt LCTRL ESC  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI            &kp D  &rgb_ug RGB_EFF            &kp G                        &rgb_ug RGB_HUI   &kp J      &kp K            &kp L    &kp UP    &kp SQT
+    &kp LSHFT  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD            &kp C            &kp V  &rgb_ug RGB_BRI  &kp C_MUTE  &kp C_PP  &rgb_ug RGB_HUD   &kp M  &kp COMMA         &kp LEFT  &kp DOWN  &kp RIGHT
+                                       &kp LGUI         &kp LALT            &kp E  &rgb_ug RGB_BRD     &lt 2 A
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_BRI_UP LS(C_BRI_DN)>;
         };
 
         lower_layer {
             label = "lower";
             bindings = <
- &trans  &kp F1  &kp F2  &kp F3  &kp F4   &kp F5                                                 &kp F6  &kp F7  &kp F8  &kp F9       &kp F10          &kp F11
- &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                                                 &kp N6  &kp N7  &kp N8  &kp N9        &kp N0         &kp BSPC
-&kp F11  &kp F1  &kp F2  &kp F3  &kp F4   &kp F5                                            &kp KP_PLUS  &kp N4  &kp N5  &kp N6  &kp KP_ENTER  &kp KP_MULTIPLY
-&kp F12  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &to 1 //  1 GAMING  &to 0 //  0 DEFAULT  &kp KP_MINUS  &kp N1  &kp N2  &kp N3  &kp KP_ENTER    &kp KP_DIVIDE
-                 &trans  &trans  &trans   &trans              &trans               &trans        &trans  &trans  &trans  &trans
+ &trans  &kp F1  &kp F2  &kp F3  &kp F4   &kp F5                      &kp F6  &kp F7  &kp F8  &kp F9       &kp F10          &kp F11
+ &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                      &kp N6  &kp N7  &kp N8  &kp N9        &kp N0         &kp BSPC
+&kp F11  &kp F1  &kp F2  &kp F3  &kp F4   &kp F5                 &kp KP_PLUS  &kp N4  &kp N5  &kp N6  &kp KP_ENTER  &kp KP_MULTIPLY
+&kp F12  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &to 1  &trans       &trans  &trans  &trans  &trans        &trans           &trans
+                 &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
