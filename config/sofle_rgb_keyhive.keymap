@@ -55,7 +55,7 @@
             label = "game";
             bindings = <
     &kp GRAVE          &kp DEL           &kp N2           &kp N3           &kp N4           &kp N5                                 &kp N6  &kp N7     &kp N8           &kp N9    &kp N0   &kp BSPC
-      &kp TAB            &kp Q            &kp W  &rgb_ug RGB_EFF           &reset            &kp T                                  &kp Y  &reset      &kp I  &rgb_ug RGB_TOG     &kp P   &kp BSLH
+      &kp TAB            &kp Q            &rgb_ug RGB_EFR   &rgb_ug RGB_EFF           &reset            &kp T                                  &kp Y  &reset      &kp I  &rgb_ug RGB_TOG     &kp P   &kp BSLH
 &mt LCTRL ESC  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI            &kp D  &rgb_ug RGB_EFF            &kp G                        &rgb_ug RGB_HUI   &kp J      &kp K            &kp L    &kp UP    &kp SQT
     &kp LSHFT  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD            &kp C            &kp V  &rgb_ug RGB_BRI  &kp C_MUTE  &kp C_PP  &rgb_ug RGB_HUD   &kp M  &kp COMMA         &kp LEFT  &kp DOWN  &kp RIGHT
                                        &kp LGUI         &kp LALT            &kp E  &rgb_ug RGB_BRD     &lt 2 A
